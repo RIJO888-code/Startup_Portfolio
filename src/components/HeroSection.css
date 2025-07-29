@@ -1,0 +1,181 @@
+/* src/components/HeroSection.css */
+
+.hero-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(160deg, #0a0a0a, #1a1a1a, #2e2e2e); /* Gotham gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #f4f4f4;
+  padding: 0 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Moving fog-like overlay */
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 80%);
+  animation: fogMove 20s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes fogMove {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(10%, 10%) rotate(360deg);
+  }
+}
+
+/* Animations for content */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #ffdc00; /* Batman yellow */
+  text-shadow: 0 0 20px rgba(255, 220, 0, 0.4);
+  letter-spacing: 1px;
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  color: #cccccc;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: fadeIn 1.4s ease-out forwards;
+}
+
+/* Buttons */
+.hero-btn {
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  background-color: #ffdc00;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 220, 0, 0.3);
+}
+
+.hero-btn:hover {
+  background-color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 220, 0, 0.6);
+}
+
+.hero-btn.outline {
+  background-color: transparent;
+  color: #ffdc00;
+  border: 2px solid #ffdc00;
+}
+
+.hero-btn.outline:hover {
+  background-color: #ffdc00;
+  color: #1a1a1a;
+  box-shadow: 0 0 20px rgba(255, 220, 0, 0.6);
+}
+
+/* Text animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .hero-btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-btn {
+    width: 80%;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+}

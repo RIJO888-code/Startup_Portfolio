@@ -1,0 +1,124 @@
+.about-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #0c0c0c);
+  color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.about-content {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  z-index: 1;
+  padding: 0 10px;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #fbd400, #f8ff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowTitle 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowTitle {
+  from {
+    text-shadow: 0 0 10px #fbd400;
+  }
+  to {
+    text-shadow: 0 0 20px #f8ff00;
+  }
+}
+
+.about-description {
+  font-size: 1.1rem;
+  color: #bbbbbb;
+  margin-bottom: 50px;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  line-height: 1.8;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 10px;
+}
+
+.about-card {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 0, 0.1);
+  border: 1px solid #fbd40088;
+  transition: all 0.4s ease;
+  color: #f1f1f1;
+}
+
+.about-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #fbd400;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* 📱 Responsive Tweaks */
+@media screen and (max-width: 768px) {
+  .about-title {
+    font-size: 2.2rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+
+  .about-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-container {
+    padding: 30px 15px;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+  }
+
+  .about-card {
+    padding: 20px;
+  }
+
+  .about-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .about-card p {
+    font-size: 0.85rem;
+  }
+}
