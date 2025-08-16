@@ -95,7 +95,7 @@ const ContactPage = () => {
           📞 Phone: +91 73067 75440 , +91 94002 06317
         </motion.p>
         <motion.p style={contactInfoStyle}>
-          📧 Email: contact@yourcompany.com
+          📧 Email: protekka@gmail.com
         </motion.p>
         <motion.p style={contactInfoStyle}>
           📍 Location: Kollam , Kerala, India

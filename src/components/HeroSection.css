@@ -179,3 +179,14 @@
     padding: 10px 18px;
   }
 }
+.hero-company {
+  font-size: 4rem; /* Bigger than tagline */
+  font-weight: 900;
+  margin-bottom: 25px;
+  color: #ffdc00; /* Batman yellow */
+  text-shadow: 0 0 25px rgba(255, 220, 0, 0.6);
+  letter-spacing: 2px;
+  animation: fadeInDown 1s ease-out forwards;
+  text-transform: uppercase;
+}
+

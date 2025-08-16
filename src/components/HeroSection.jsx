@@ -1,11 +1,11 @@
 // src/components/HeroSection.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom'; // 👈 Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import './HeroSection.css';
 
 const HeroSection = () => {
-  const navigate = useNavigate(); // 👈 Initialize navigate function
+  const navigate = useNavigate();
 
   return (
     <div className="hero-container">
@@ -15,29 +15,34 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="hero-title">Innovating Solutions. Empowering Ideas.</h1>
-        <p className="hero-subtitle">Delivering smart, scalable, and client-focused tech solutions.</p>
-        
+      
+        <h1 className="hero-company">PROTEKKA</h1>
+
+        {/* Existing tagline */}
+        <h2 className="hero-title">Innovating Solutions. Empowering Ideas.</h2>
+        <p className="hero-subtitle">
+          Delivering smart, scalable, and client-focused tech solutions.
+        </p>
+
         <div className="hero-buttons">
-          {/* ABOUT US button with routing */}
           <motion.button
             className="hero-btn"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/about')} // 👈 Redirect to /about
+            onClick={() => navigate('/about')}
           >
             ABOUT US
           </motion.button>
- <motion.button
+
+          <motion.button
             className="hero-btn"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/Project')} // 👈 Redirect to /about
+            onClick={() => navigate('/Project')}
           >
-             PROJECTS
+            PROJECTS
           </motion.button>
 
-          {/* Other button */}
           <motion.button
             className="hero-btn outline"
             whileHover={{ scale: 1.1 }}
